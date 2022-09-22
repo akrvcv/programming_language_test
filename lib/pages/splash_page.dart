@@ -14,11 +14,11 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
-    startTimer();
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _startTimer());
   }
 
-  void startTimer() async {
+  void _startTimer() async {
     await Provider.of<AppProvider>(context, listen: false).init();
     await Future.delayed(Duration(seconds: 3));
     Navigator.pushReplacement(context, FadeRoute(page: MenuPage()));
