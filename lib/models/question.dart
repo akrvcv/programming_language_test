@@ -13,5 +13,5 @@ class Question extends BaseModel {
           text: text,
         );
 
-  String get text => this.text + '?';
+  String get question => this.text + '?';
 }
