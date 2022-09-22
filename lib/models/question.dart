@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:programming_language_test/models/base_model.dart';
+import 'base_model.dart';
 
 class Question extends BaseModel {
   List<int> anserListId;
