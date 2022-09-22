@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:programming_language_test/providers/app_provider.dart';
 import 'package:provider/provider.dart';
 
+import 'pages.dart';
+
 class MainPage extends StatefulWidget {
   const MainPage({Key key}) : super(key: key);
 
@@ -37,7 +39,14 @@ class _MainPageState extends State<MainPage> {
                         onPressed: () {
                           bool isEnd = provider
                               .selectAnswerById(provider.curAnswerList[i].id);
-                          if (isEnd) {}
+                          if (isEnd) {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ResultPage(),
+                              ),
+                            );
+                          }
                         },
                         child: Text(
                           provider.curAnswerList[i].text,

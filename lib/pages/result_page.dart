@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:programming_language_test/providers/app_provider.dart';
 import 'package:provider/provider.dart';
 
+import 'pages.dart';
+
 class ResultPage extends StatelessWidget {
   const ResultPage({
     Key key,
@@ -38,6 +40,10 @@ class ResultPage extends StatelessWidget {
                       ElevatedButton(
                         onPressed: () {
                           provider.setStartState();
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => MainPage()),
+                          );
                         },
                         child: Container(
                           alignment: Alignment.center,
@@ -47,7 +53,10 @@ class ResultPage extends StatelessWidget {
                       ),
                       SizedBox(height: 15),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          provider.setStartState();
+                          Navigator.pop(context);
+                        },
                         child: Container(
                           alignment: Alignment.center,
                           width: double.infinity,

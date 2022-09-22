@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:programming_language_test/providers/app_provider.dart';
+import 'package:provider/provider.dart';
+
+import 'pages.dart';
 
 class MenuPage extends StatelessWidget {
   const MenuPage({Key key}) : super(key: key);
@@ -15,17 +19,33 @@ class MenuPage extends StatelessWidget {
             children: [
               _buildMenuButton(
                 text: 'Пройти тест',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MainPage(),
+                    ),
+                  );
+                },
               ),
               SizedBox(height: 15),
               _buildMenuButton(
                 text: 'Результаты',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ResultListPage()),
+                  );
+                },
               ),
               SizedBox(height: 45),
               _buildMenuButton(
                 text: 'Сохранить и выйти',
-                onPressed: () async {},
+                onPressed: () async {
+                  await Provider.of<AppProvider>(context, listen: false)
+                      .saveSavedResultList();
+                  Navigator.pop(context);
+                },
               ),
             ],
           ),

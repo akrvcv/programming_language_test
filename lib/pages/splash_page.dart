@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:programming_language_test/providers/app_provider.dart';
 import 'package:provider/provider.dart';
 
+import 'pages.dart';
+
 class SplashPage extends StatefulWidget {
   const SplashPage({Key key}) : super(key: key);
 
@@ -19,6 +21,7 @@ class _SplashPageState extends State<SplashPage> {
   void startTimer() async {
     await Provider.of<AppProvider>(context, listen: false).init();
     await Future.delayed(Duration(seconds: 3));
+    Navigator.pushReplacement(context, FadeRoute(page: MenuPage()));
   }
 
   @override
