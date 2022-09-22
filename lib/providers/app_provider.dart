@@ -71,9 +71,8 @@ class AppProvider extends ChangeNotifier {
     }
   }
 
-  void _loadSavedResultList() async {
+  void _loadSavedResultList() {
     _savedResultList = _saverService.getSavedResultList();
-    notifyListeners();
   }
 
   Question _getQuestionById(int id) =>
