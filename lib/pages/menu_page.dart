@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:programming_language_test/providers/app_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -44,7 +47,7 @@ class MenuPage extends StatelessWidget {
                 onPressed: () async {
                   await Provider.of<AppProvider>(context, listen: false)
                       .saveSavedResultList();
-                  Navigator.pop(context);
+                  Platform.isAndroid ? SystemNavigator.pop() : exit(0);
                 },
               ),
             ],
