@@ -1,16 +1,9 @@
-# programming_language_test
+# Лабораторная работа №1 по дисциплине "Системы искуственного интеллекта"
 
-A new Flutter project.
+Экспертная система "Выбор языка и технологии программирования"
 
-## Getting Started
+## Ресурсы
 
-This project is a starting point for a Flutter application.
+* [Отчёт](https://github.com/akrvcv/programming_language_test/blob/master/report/al_lab_1.pdf) 
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* [Дерево решений](https://github.com/akrvcv/programming_language_test/blob/master/resources/decision_tree.drawio)
