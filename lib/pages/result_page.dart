@@ -12,19 +12,26 @@ class ResultPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Ваш результат:',
-          textAlign: TextAlign.center,
-        ),
-      ),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
-          child: Consumer<AppProvider>(
-            builder: (context, provider, _) {
-              return Column(
+    return Consumer<AppProvider>(
+      builder: (context, provider, _) {
+        return Scaffold(
+          appBar: AppBar(
+            title: Text(
+              'Ваш результат:',
+              textAlign: TextAlign.center,
+            ),
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back_ios),
+              onPressed: () {
+                provider.setStartState();
+                Navigator.pop(context);
+              },
+            ),
+          ),
+          body: SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(width: double.infinity),
@@ -67,11 +74,11 @@ class ResultPage extends StatelessWidget {
                     ],
                   ),
                 ],
-              );
-            },
+              ),
+            ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }
